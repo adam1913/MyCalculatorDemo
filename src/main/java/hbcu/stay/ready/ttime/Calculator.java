@@ -1,27 +1,64 @@
 package hbcu.stay.ready.ttime;
 
-public class Calculator {
-    private double memory;
 
-    public Calculator(){
+
+
+public class Calculator { private double memory;
+
+    public Calculator() {
         memory = 0;
     }
 
-    public Calculator(double memory){
+    public Calculator(double memory) {
         this.memory = memory;
     }
 
-    public double add(double x){
+    public double add(double x) {
         memory += x;
         return memory;
     }
 
-    public double add(double x, double y){
-        return 0;
-    }
-
-    public double subtract(double x){
+    public double subtract(double x) {
         memory -= x;
         return memory;
+
+
     }
+    public double divide(double x) throws ArithmeticException {
+        if (x == 0) throw new ArithmeticException();
+
+        memory /= x;
+        return memory;
+    }
+    public double multiply(double x) {
+        memory *= x;
+        return memory;
+    }
+    public double square(){
+        memory = (memory*memory);
+        return memory;
+    }
+    public double squareRoot(){
+        memory = (Math.sqrt(memory));
+        return memory;
+    }
+    public double exponentiation(double x){
+        memory = (Math.pow(memory, x));
+        return memory;
+    }
+    public double inverse(){
+        memory = (1/memory);
+        return memory;
+    }
+    public double invert(){
+        if (memory > 0){
+            memory = (0-memory);
+        }else if(memory < 0)
+            memory = Math.abs(memory);
+        return memory;
+    }
+
+
 }
+
+
